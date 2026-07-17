@@ -1347,6 +1347,7 @@
 
         async function fetchData() {
             try {
+                const API_KEY = 'patK0gWbJHzEmJ8fr.7eda49e20d2d193c9cacabb8bc340a38f762a9cbb0f94aebb4f4130efe14a820';
                 const BASE_ID = 'appWtem30RDXU00g3';
                 const TABLE_NAME = '寻珍糖点列表';
                 
@@ -1361,7 +1362,7 @@
                     console.log('使用本地代理');
                     response = await fetch(`/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}`, {
                         headers: {
-                            'Authorization': 'Bearer YOUR_LOCAL_TOKEN'
+                            'Authorization': `Bearer ${API_KEY}`
                         }
                     });
                 } else {
