@@ -1366,8 +1366,12 @@
                         }
                     });
                 } else {
-                    console.log('使用Cloudflare函数');
-                    response = await fetch(`/api/data?base=${BASE_ID}&table=${encodeURIComponent(TABLE_NAME)}`);
+                    console.log('直接调用Airtable API');
+                    response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}`, {
+                        headers: {
+                            'Authorization': `Bearer ${API_KEY}`
+                        }
+                    });
                 }
                 console.log('HTTP状态码:', response.status);
 
